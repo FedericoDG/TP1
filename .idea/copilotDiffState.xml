@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/tp1/ModoAvionReceiver.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/app/src/main/java/com/example/tp1/ModoAvionReceiver.java" />
+              <option name="originalContent" value="package com.example.tp1;&#10;&#10;import android.Manifest;&#10;import android.content.BroadcastReceiver;&#10;import android.content.Context;&#10;import android.content.Intent;&#10;import android.content.pm.PackageManager;&#10;import android.net.Uri;&#10;import android.widget.Toast;&#10;&#10;import androidx.core.content.ContextCompat;&#10;&#10;public class ModoAvionReceiver extends BroadcastReceiver {&#10;&#10;    @Override&#10;    public void onReceive(Context context, Intent intent) {&#10;        String accion = intent.getAction();&#10;&#10;        // &quot;android.intent.action.AIRPLANE_MODE&quot;&#10;        if (Intent.ACTION_AIRPLANE_MODE_CHANGED.equals(accion)) {&#10;            boolean modoAvionActivo = intent.getBooleanExtra(&quot;state&quot;, false);&#10;&#10;            if (modoAvionActivo) {&#10;                Uri numero = Uri.parse( &quot;tel:2664553747&quot;);&#10;                intent.setData(numero);&#10;&#10;                if (ContextCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {&#10;                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);&#10;                    context.startActivity(intent);&#10;                }&#10;            } else {&#10;                Toast.makeText(context, &quot;Modo avión desactivado&quot;, Toast.LENGTH_SHORT).show();&#10;            }&#10;        }&#10;    }&#10;}" />
+              <option name="updatedContent" value="package com.example.tp1;&#10;&#10;import android.Manifest;&#10;import android.content.BroadcastReceiver;&#10;import android.content.Context;&#10;import android.content.Intent;&#10;import android.content.pm.PackageManager;&#10;import android.net.Uri;&#10;import android.widget.Toast;&#10;&#10;import androidx.core.content.ContextCompat;&#10;&#10;public class ModoAvionReceiver extends BroadcastReceiver {&#10;&#10;    @Override&#10;    public void onReceive(Context context, Intent intent) {&#10;        String accion = intent.getAction();&#10;&#10;        // &quot;android.intent.action.AIRPLANE_MODE&quot;&#10;        if (Intent.ACTION_AIRPLANE_MODE_CHANGED.equals(accion)) {&#10;            boolean modoAvionActivo = intent.getBooleanExtra(&quot;state&quot;, false);&#10;&#10;            if (modoAvionActivo) {&#10;                Uri numero = Uri.parse( &quot;tel:2664553747&quot;);&#10;                intent.setData(numero);&#10;&#10;                if (ContextCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {&#10;                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);&#10;                    context.startActivity(intent);&#10;                }&#10;            } else {&#10;                Toast.makeText(context, &quot;Modo avión desactivado&quot;, Toast.LENGTH_SHORT).show();&#10;            }&#10;        }&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
