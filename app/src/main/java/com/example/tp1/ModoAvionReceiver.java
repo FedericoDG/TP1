@@ -24,8 +24,8 @@ public class ModoAvionReceiver extends BroadcastReceiver {
                 Intent newIntent = new Intent(Intent.ACTION_CALL);
                 newIntent.setData(Uri.parse("tel:2664553747"));
 
-                if (ContextCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) {
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                if (ContextCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(newIntent);
                 }
             } else {
